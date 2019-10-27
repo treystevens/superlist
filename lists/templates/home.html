@@ -9,9 +9,11 @@
             {% csrf_token %}
         </form>
         <table id="id_list_table">
+            {% for item in items %}
             <tr>
-                <td>1: {{ new_item_text }}</td>
+                <td>{{ forloop.counter }}: {{ item.text }}</td>
             </tr>
+            {% endfor %}
         </table>
     </body>
 </html>
